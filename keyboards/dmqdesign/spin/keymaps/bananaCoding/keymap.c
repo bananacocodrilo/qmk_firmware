@@ -27,23 +27,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) { /* First encoder */
     if (clockwise) {
-      tap_code(KC_VOLU); // Volume
+      tap_code16(KC_VOLU); // Volume
     } else {
-      tap_code(KC_VOLD);
+      tap_code16(KC_VOLD);
     }
   } else if (index == 1) { /* Second encoder */
 
     if (clockwise) {
-      tap_code(C(KC_MINS)); // Zoom in/out
+      tap_code16(LCTL(KC_MINS)); // Zoom in/out
     } else {
-      tap_code(C(KC_EQL));
+      tap_code16(LCTL(KC_EQL));
     }
 
   } else if (index == 2) { /* Third encoder */
     if (clockwise) {
-      tap_code(KC_MS_WH_DOWN); // Scroll
+      tap_code16(KC_MS_WH_DOWN); // Scroll
     } else {
-      tap_code(KC_MS_WH_UP);
+      tap_code16(KC_MS_WH_UP);
     }
   }
     return true;
